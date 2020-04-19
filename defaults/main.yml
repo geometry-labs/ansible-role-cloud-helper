@@ -1,2 +1,5 @@
 ---
 # defaults file for cloud-helper
+
+enable_cloud_wait: false
+enable_jq: false

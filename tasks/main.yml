@@ -1,2 +1,18 @@
 ---
 # tasks file for cloud-helper
+
+- name: check if running on cloud
+  stat:
+    path: /var/lib/cloud
+  register: cloud
+
+- name: Wait for updates / upgrades from user data script to release lock
+  script: wait-for-apt-on-startup.sh
+  when: cloud.stat.exists and enable_cloud_wait
+
+- name: Install JQ
+  apt:
+    name: jq
+    state: present
+    update_cache: yes
+  when: enable_jq
