@@ -4,4 +4,4 @@
   tasks:
     - name: "Include cloud-helper"
       include_role:
-        name: "cloud-helper"
+        name: cloud_helper
