@@ -16,3 +16,9 @@
     state: present
     update_cache: yes
   when: enable_jq
+
+- name: AWS ephemeral volume mounts
+  include_tasks: aws-volume-mounts.yml
+  when:
+    - cloud_provider == 'aws'
+    - mount_volumes
