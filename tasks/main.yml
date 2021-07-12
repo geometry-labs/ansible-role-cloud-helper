@@ -25,10 +25,12 @@
     status_code: 200
     body_format: json
   register: instance_type
+  when: cloud_provider == 'aws'
 
 - name: Create list of mounted devices
   set_fact:
     mounted_devices: "{{ ansible_mounts|json_query('[].device') }}"
+  when: cloud_provider == 'aws'
 
 - name: Create a ext4 filesystem on all ephemeral volumes
   filesystem:
