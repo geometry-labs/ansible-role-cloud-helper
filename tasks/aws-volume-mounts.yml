@@ -8,7 +8,7 @@
 
 - name: Register instance type var
   set_fact:
-    instance_type: "{{ instance_type_resp.content }}"
+    instance_type_label: "{{ instance_type_resp.content }}"
 
 - name: Create list of mounted devices
   set_fact:

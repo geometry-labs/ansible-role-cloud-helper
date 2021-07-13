@@ -4,11 +4,11 @@
 enable_cloud_wait: false
 enable_jq: false
 
-instance_type: ""
+instance_type_label: ""
 mount_path: /data
 cloud_provider: aws
 
-volumes: "{{ [] if not instance_type else ephemeral_volumes[instance_type] }}"
+volumes: "{{ [] if not instance_type_label else ephemeral_volumes[instance_type_label] }}"
 
 one_ephemeral_std:
   - { device_name: /dev/sdb }
