@@ -4,8 +4,11 @@
     method: GET
     return_content: yes
     status_code: 200
-    body_format: json
-  register: instance_type
+  register: instance_type_resp
+
+- name: Register instance type var
+  set_fact:
+    instance_type: "{{ instance_type_resp.content }}"
 
 - name: Create list of mounted devices
   set_fact:
