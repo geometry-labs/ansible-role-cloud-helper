@@ -30,3 +30,11 @@
     fstype: ext4
     state: mounted
   when: volumes|length == 1
+
+- name: Grant global permissions
+  file:
+    path: "{{ mount_path }}"
+    owner: root
+    group: root
+    mode: '777'
+    recurse: yes
