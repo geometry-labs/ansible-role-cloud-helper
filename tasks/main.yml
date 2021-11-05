@@ -21,4 +21,4 @@
   include_tasks: aws-volume-mounts.yml
   when:
     - cloud_provider == 'aws'
-    - mount_volumes
+    - mount_volumes | bool
