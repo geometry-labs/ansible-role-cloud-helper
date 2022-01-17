@@ -38,6 +38,9 @@ eight_ephemeral_nvme:
   - { device_name: /dev/nvme6n1 }
   - { device_name: /dev/nvme7n1 }
 
+one_ephermeral_nvme_boot_nvme:
+  - { device_name: /dev/nvme1n1 }
+
 ephemeral_volumes:
   i3.large: "{{ one_ephemeral_nvme }}"
   i3.xlarge: "{{ one_ephemeral_nvme }}"
@@ -63,7 +66,7 @@ ephemeral_volumes:
   c5d.xlarge: "{{ one_ephemeral_nvme }}"
   c5d.2xlarge: "{{ one_ephemeral_nvme }}"
   c5d.4xlarge: "{{ one_ephemeral_nvme }}"
-  c5d.9xlarge: "{{ one_ephemeral_nvme }}"
+  c5d.9xlarge: "{{ one_ephermeral_nvme_boot_nvme }}"
   c5d.12xlarge: "{{ two_ephemeral_nvme }}"
   c5d.18xlarge: "{{ two_ephemeral_nvme }}"
   c5d.24xlarge: "{{ two_ephemeral_nvme }}"
